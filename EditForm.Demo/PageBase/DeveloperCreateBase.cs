@@ -1,10 +1,6 @@
-﻿using EditForm.Demo.RoutingConfig;
-using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Routing;
-
-namespace EditForm.Demo.PageBase
+﻿namespace EditForm.Demo
 {
-   
+
     public class DeveloperCreateBase : ComponentBase, IDisposable
     {
         [Inject]

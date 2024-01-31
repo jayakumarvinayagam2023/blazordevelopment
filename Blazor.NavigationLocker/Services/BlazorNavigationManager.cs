@@ -3,14 +3,14 @@ using Microsoft.AspNetCore.Components.Routing;
 
 namespace Blazor.NavigationLocker
 {
-    public class BlazrNavigationManager : NavigationManager
+    public class BlazorNavigationManager : NavigationManager
     {
         private NavigationManager _UnderlyingNavigationManager;
         private bool _isBlindNavigation = false;
 
         public event EventHandler<NavigationData>? BeforeLocationChange;
 
-        public BlazrNavigationManager(NavigationManager? underlyingNavigationManager)
+        public BlazorNavigationManager(NavigationManager? underlyingNavigationManager)
         {
             _UnderlyingNavigationManager = underlyingNavigationManager!;
 

@@ -1,4 +1,4 @@
-﻿namespace EditForm.Demo.RoutingConfig
+﻿namespace EditForm.Demo
 {
     public static class RoutingSetting
     {

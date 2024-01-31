@@ -4,7 +4,7 @@ using System.Reflection;
 
 namespace Blazor.NavigationLocker
 {
-    internal static class RouteTableFactory
+    public static class RouteTableFactory
     {
         private static readonly ConcurrentDictionary<RouteKey, RouteTable> Cache = new();
         public static readonly IComparer<RouteEntry> RoutePrecedence = Comparer<RouteEntry>.Create(RouteComparison);
@@ -54,7 +54,7 @@ namespace Blazor.NavigationLocker
             }
         }
 
-        internal static RouteTable Create(List<Type> componentTypes)
+        public static RouteTable Create(List<Type> componentTypes)
         {
             var templatesByHandler = new Dictionary<Type, string[]>();
             foreach (var componentType in componentTypes)
@@ -76,7 +76,7 @@ namespace Blazor.NavigationLocker
             return Create(templatesByHandler);
         }
 
-        internal static RouteTable Create(Dictionary<Type, string[]> templatesByHandler)
+        public static RouteTable Create(Dictionary<Type, string[]> templatesByHandler)
         {
             var routes = new List<RouteEntry>();
             foreach (var (type, templates) in templatesByHandler)
@@ -165,7 +165,7 @@ namespace Blazor.NavigationLocker
         /// * For parameters with different numbers of constraints, the one with more wins
         /// If we get to the end of the comparison routing we've detected an ambiguous pair of routes.
         /// </summary>
-        internal static int RouteComparison(RouteEntry x, RouteEntry y)
+        public static int RouteComparison(RouteEntry x, RouteEntry y)
         {
             if (ReferenceEquals(x, y))
             {

@@ -12,7 +12,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EditForm.Core\EditForm.Core.csproj" />
+    <ProjectReference Include="..\Blazor.EditForm.Configuration\Blazor.EditForm.Configuration.csproj" />
+    <ProjectReference Include="..\Blazor.EditForm.Core\Blazor.EditForm.Core.csproj" />
+    <ProjectReference Include="..\Blazor.UI\Blazor.UI.csproj" />
   </ItemGroup>
 
 </Project>

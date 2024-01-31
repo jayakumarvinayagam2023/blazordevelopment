@@ -8,7 +8,7 @@ namespace Blazor.NavigationLocker.Components
     {
         [Inject] private IJSRuntime? _js { get; set; }
 
-        [Inject] private BlazrNavigationManager? blazrNavigationManager { get; set; }
+        [Inject] private BlazorNavigationManager? blazrNavigationManager { get; set; }
 
         [Parameter] public RenderFragment? ChildContent { get; set; }
 

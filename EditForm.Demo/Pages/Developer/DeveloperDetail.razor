@@ -1,11 +1,34 @@
 ﻿@page "/developerdetail"
 
-@using EditForm.Demo.PageBase
+@using EditForm.Demo
+@using Blazor.UI
 @inherits DeveloperDetailBase
+
+
+
+<UILoader State="LoadState">
+    <EditForm EditContext="this.editContent">
+        
+        <div class="form-group">
+            <label for="title">Summary</label>
+            <InputText id="title" @bind-Value="this.viewService.EditModel.Summary" class="form-control" />
+        </div>
+
+        <div class="text-right">
+            <button type="submit" class="btn btn-primary" @onclick="this.SaveRecord">Save</button>
+        </div>
+
+       @*  < class="btn-success" Disabled="!this.IsDirty" ClickEvent="this.SaveRecord">Save</>
+        <UIButton class="btn-dark" Show="!this.IsDirty" ClickEvent="this.Exit">Exit</UIButton>
+        <UIButton class="btn-danger" Show="this.IsDirty" ClickEvent="this.ExitWithoutSaving">Exit Without Saving</UIButton>
+                
+ *@
+    </EditForm>
+</UILoader>
 
 <h3>Developer Detail</h3>
 
-<div class="row ">
+@* <div class="row ">
     <div class="col-md-6 col-sm-6 pad-adjust">
         <input type="button" class="btn btn-secondary" value="Developer Grid" />
     </div>
@@ -13,4 +36,4 @@
 
 @code {
 
-}
+} *@

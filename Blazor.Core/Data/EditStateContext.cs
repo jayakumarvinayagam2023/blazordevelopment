@@ -1,6 +1,6 @@
 ﻿namespace Blazor.Core
 {
-    internal class EditStateContext : IDisposable
+    public class EditStateContext : IDisposable
     {
         public bool IsDirty => EditFields.IsDirty;
 

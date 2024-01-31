@@ -28,7 +28,7 @@ namespace Blazor.NavigationLocker.Components
         private bool _onNavigateCalled;
 
         // <<<====================== THIS IS A CHANGE ========================>>>
-        [Inject] public virtual BlazrNavigationManager NavigationManager { get; set; }
+        [Inject] public virtual BlazorNavigationManager NavigationManager { get; set; }
 
         [Inject] private INavigationInterception NavigationInterception { get; set; }
 
@@ -159,7 +159,7 @@ namespace Blazor.NavigationLocker.Components
             _routeTableLastBuiltForRouteKey = default;
         }
 
-        internal virtual void Refresh(bool isNavigationIntercepted)
+        public virtual void Refresh(bool isNavigationIntercepted)
         {
             // If an `OnNavigateAsync` task is currently in progress, then wait
             // for it to complete before rendering. Note: because _previousOnNavigateTask
@@ -215,7 +215,7 @@ namespace Blazor.NavigationLocker.Components
             }
         }
 
-        internal async ValueTask RunOnNavigateAsync(string path, bool isNavigationIntercepted)
+        public async ValueTask RunOnNavigateAsync(string path, bool isNavigationIntercepted)
         {
             // Cancel the CTS instead of disposing it, since disposing does not
             // actually cancel and can cause unintended Object Disposed Exceptions.
@@ -279,13 +279,13 @@ namespace Blazor.NavigationLocker.Components
         private static partial class Log
         {
             [LoggerMessage(1, LogLevel.Debug, $"Displaying {nameof(NotFound)} because path '{{Path}}' with base URI '{{BaseUri}}' does not match any component route", EventName = "DisplayingNotFound")]
-            internal static partial void DisplayingNotFound(ILogger logger, string path, string baseUri);
+            public static partial void DisplayingNotFound(ILogger logger, string path, string baseUri);
 
             [LoggerMessage(2, LogLevel.Debug, "Navigating to component {ComponentType} in response to path '{Path}' with base URI '{BaseUri}'", EventName = "NavigatingToComponent")]
-            internal static partial void NavigatingToComponent(ILogger logger, Type componentType, string path, string baseUri);
+            public static partial void NavigatingToComponent(ILogger logger, Type componentType, string path, string baseUri);
 
             [LoggerMessage(3, LogLevel.Debug, "Navigating to non-component URI '{ExternalUri}' in response to path '{Path}' with base URI '{BaseUri}'", EventName = "NavigatingToExternalUri")]
-            internal static partial void NavigatingToExternalUri(ILogger logger, string externalUri, string path, string baseUri);
+            public static partial void NavigatingToExternalUri(ILogger logger, string externalUri, string path, string baseUri);
         }
     }
 }

@@ -5,7 +5,7 @@
         public static readonly char[] InvalidParameterNameCharacters =
         new char[] { '{', '}', '=', '.' };
 
-        internal static RouteTemplate ParseTemplate(string template)
+        public static RouteTemplate ParseTemplate(string template)
         {
             var originalTemplate = template;
             template = template.Trim('/');
