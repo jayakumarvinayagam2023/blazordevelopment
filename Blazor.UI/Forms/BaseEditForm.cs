@@ -1,7 +1,4 @@
-﻿using Blazor.Core;
-using Blazor.NavigationLocker.Components;
-
-namespace Blazor.UI
+﻿namespace Blazor.UI
 {
     public partial class BaseEditForm : ComponentBase
     {
@@ -9,7 +6,7 @@ namespace Blazor.UI
         [Parameter] public Guid Id { get; set; } = GuidExtensions.Null;
         [Parameter] public EventCallback ExitAction { get; set; }
 
-        [CascadingParameter] protected NavigationLock? navigationLock { get; set; }
+        [CascadingParameter] public NavigationLock? navigationLock { get; set; }
 
         [CascadingParameter] public IModalDialog? Modal { get; set; }
 

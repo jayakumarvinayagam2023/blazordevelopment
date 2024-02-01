@@ -5,4 +5,8 @@ global using Microsoft.AspNetCore.Components.Routing;
 global using Microsoft.JSInterop;
 global using Blazor.UI;
 
-namespace Blazr.NavigationLocker;
+global using Blazor.NavigationLocker;
+global using Blazor.EditForm.Core;
+global using Blazor.Core;
+global using Blazor.UI;
+global using Blazor.UI.Bootstrap;

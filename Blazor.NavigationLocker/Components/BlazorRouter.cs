@@ -4,9 +4,9 @@ using Microsoft.Extensions.Logging;
 using System.Reflection;
 using System.Runtime.ExceptionServices;
 
-namespace Blazor.NavigationLocker.Components
+namespace Blazor.NavigationLocker
 {
-    public partial class BlazrRouter : IComponent, IHandleAfterRender, IDisposable
+    public partial class BlazorRouter : IComponent, IHandleAfterRender, IDisposable
     {
         static readonly char[] _queryOrHashStartChar = new[] { '?', '#' };
         // Dictionary is intentionally used instead of ReadOnlyDictionary to reduce Blazor size
@@ -17,7 +17,7 @@ namespace Blazor.NavigationLocker.Components
         string _baseUri;
         string _locationAbsolute;
         bool _navigationInterceptionEnabled;
-        ILogger<BlazrRouter> _logger;
+        ILogger<BlazorRouter> _logger;
 
         private CancellationTokenSource _onNavigateCts;
 
@@ -83,7 +83,7 @@ namespace Blazor.NavigationLocker.Components
         /// <inheritdoc />
         public void Attach(RenderHandle renderHandle)
         {
-            _logger = LoggerFactory.CreateLogger<BlazrRouter>();
+            _logger = LoggerFactory.CreateLogger<BlazorRouter>();
             _renderHandle = renderHandle;
             _baseUri = NavigationManager.BaseUri;
             _locationAbsolute = NavigationManager.Uri;

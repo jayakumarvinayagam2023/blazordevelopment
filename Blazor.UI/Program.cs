@@ -5,3 +5,4 @@ global using Microsoft.AspNetCore.Components.Web;
 
 global using Blazor.Core;
 global using Blazor.UI;
+global using Blazor.NavigationLocker;

@@ -1,8 +1,4 @@
-﻿using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Rendering;
-using Microsoft.JSInterop;
-
-namespace Blazor.NavigationLocker.Components
+﻿namespace Blazor.NavigationLocker
 {
     public class NavigationLock : ComponentBase, IDisposable
     {

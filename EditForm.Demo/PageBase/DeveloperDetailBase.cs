@@ -5,7 +5,7 @@ using Blazor.Core;
 using Blazor.EditForm.Core;
 using Microsoft.AspNetCore.Components.Forms;
 
-namespace EditForm.Demo
+namespace Blazor.EditForm.Demo
 {
     public partial class DeveloperDetailBase : BaseEditForm, IDisposable
     {

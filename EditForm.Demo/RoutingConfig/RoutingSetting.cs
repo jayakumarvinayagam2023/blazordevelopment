@@ -1,4 +1,4 @@
-﻿namespace EditForm.Demo
+﻿namespace Blazor.EditForm.Demo
 {
     public static class RoutingSetting
     {

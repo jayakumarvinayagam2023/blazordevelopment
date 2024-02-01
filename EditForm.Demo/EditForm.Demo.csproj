@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -14,6 +14,8 @@
   <ItemGroup>
     <ProjectReference Include="..\Blazor.EditForm.Configuration\Blazor.EditForm.Configuration.csproj" />
     <ProjectReference Include="..\Blazor.EditForm.Core\Blazor.EditForm.Core.csproj" />
+    <ProjectReference Include="..\Blazor.NavigationLocker\Blazor.NavigationLocker.csproj" />
+    <ProjectReference Include="..\Blazor.UI.Bootstrap\Blazor.UI.Bootstrap.csproj" />
     <ProjectReference Include="..\Blazor.UI\Blazor.UI.csproj" />
   </ItemGroup>
 
